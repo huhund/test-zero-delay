@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://dhejr3x5ybxqm"]
+
+[ext_resource type="Script" path="res://moving_box_3d.gd" id="1_4nt57"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_b2rwh"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_mykxa"]
+
+[node name="Test3D" type="Node3D"]
+
+[node name="MovingBox3D" type="RigidBody3D" parent="."]
+script = ExtResource("1_4nt57")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MovingBox3D"]
+shape = SubResource("BoxShape3D_b2rwh")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="MovingBox3D"]
+mesh = SubResource("BoxMesh_mykxa")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10.8485)
